@@ -1,66 +1,62 @@
-import React from 'react';
-import './directory.styles.scss';
-import MenuItem from '../menu-item/menu-item.component';
+import React from "react";
+import "./directory.styles.scss";
+import MenuItem from "../menu-item/menu-item.component";
 
 class Directory extends React.Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
       sections: [
         {
-          title: 'hats',
-          imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+          title: "hats",
+          imageUrl: "https://i.ibb.co/cvpntL1/hats.png",
           id: 1,
-          linkUrl: 'hats'
+          linkUrl: "hats",
         },
         {
-          title: 'jackets',
-          imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
+          title: "jackets",
+          imageUrl: "https://i.ibb.co/px2tCc3/jackets.png",
           id: 2,
-          linkUrl: ''
+          linkUrl: "",
         },
         {
-          title: 'sneakers',
-          imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
+          title: "sneakers",
+          imageUrl: "https://i.ibb.co/0jqHpnp/sneakers.png",
           id: 3,
-          linkUrl: ''
+          linkUrl: "",
         },
         {
-          title: 'womens',
-          imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
-          size: 'large',
+          title: "womens",
+          imageUrl: "https://i.ibb.co/GCCdy8t/womens.png",
+          size: "large",
           id: 4,
-          linkUrl: ''
+          linkUrl: "",
         },
         {
-          title: 'mens',
-          imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
-          size: 'large',
+          title: "mens",
+          imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
+          size: "large",
           id: 5,
-          linkUrl: ''
-        }
-      ]
-    }
+          linkUrl: "",
+        },
+      ],
+    };
   }
 
-  render(){
-    return(
-      <div className='directory-menu'>
-        {
-          this.state.sections.map(({id, ...otherSectionProps}) => (
-          <MenuItem key={id} {...otherSectionProps}/>
-          ))
-        }
-        
+  render() {
+    return (
+      <div className="directory-menu">
+        {this.state.sections.map(({ id, ...otherSectionProps }) => (
+          <MenuItem key={id} {...otherSectionProps} />
+        ))}
       </div>
-    )
+    );
   }
-
 }
 
 export default Directory;
 
-//we use spreading operator instead of the below code: 
+//we use spread operator instead of the below code:
 /*{
   this.state.sections.map(({title, id, imageUrl, size, linkUrl}) => (
   <MenuItem key={id} title={title.toUpperCase()} imageUrl={imageUrl} size={size} linkUrl={linkUrl}/>
