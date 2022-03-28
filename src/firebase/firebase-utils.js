@@ -47,6 +47,11 @@ const provider = new firebase.auth.GoogleAuthProvider();
 
 provider.setCustomParameters({ prompt: "select_account" });
 
+export const addCollectionAndDocuments = (collectionKey, objectToAdd) => {
+  const collectionRef = firestore.collection(collectionKey);
+  console.log(collectionRef);
+};
+
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
 export default firebase;
